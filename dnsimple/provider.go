@@ -33,6 +33,10 @@ func Provider() *schema.Provider {
 			},
 		},
 
+		DataSourcesMap: map[string]*schema.Resource{
+			"dnsimple_certificate": dataSourceDNSimpleCertificate(),
+		},
+
 		ResourcesMap: map[string]*schema.Resource{
 			"dnsimple_email_forward": resourceDNSimpleEmailForward(),
 			"dnsimple_record":        resourceDNSimpleRecord(),
